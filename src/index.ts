@@ -62,7 +62,7 @@ export function nsprt(directory: string = '.') {
 						const prettied = format(contents.toString(), {
 							singleQuote: true,
 							useTabs: true,
-							parser: parserMap[path.extname(filepath)] || 'babel',
+							parser: parserMap[path.extname(filepath).substr(1)] || 'babel',
 						});
 						const newhash = await nsblob.store(prettied);
 						if (newhash !== hash) {
