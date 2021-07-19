@@ -1,0 +1,26 @@
+{
+	"name": "nsprt",
+	"description": "Prettier + nslibmgr cloudhandler",
+	"version": "0.1.0-1",
+	"main": "lib/index.js",
+	"bin": {
+		"nsprt": "lib/cli.js"
+	},
+	"scripts": {
+		"start": "node lib/cli",
+		"test": "npx nslibmgr test"
+	},
+	"author": "Prokop Schield",
+	"devDependencies": {
+		"@types/node": ">=14",
+		"@types/prettier": "^2.3.2"
+	},
+	"keywords": [],
+	"license": "GPL-3.0-or-later",
+	"dependencies": {
+		"nsblob": "^0.2.6",
+		"prettier": "^2.3.2",
+		"serial-async-io": "^0.1.0-2",
+		"ts-hound": "^1.0.7"
+	}
+}
