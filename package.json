@@ -1,7 +1,7 @@
 {
 	"name": "nsprt",
 	"description": "Prettier + nslibmgr cloudhandler",
-	"version": "0.1.0-2",
+	"version": "0.1.0",
 	"main": "lib/index.js",
 	"bin": {
 		"nsprt": "lib/cli.js"

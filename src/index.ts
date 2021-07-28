@@ -58,11 +58,12 @@ export function nsprt(directory: string = '.') {
 				try {
 					const contents = await read(filepath);
 					const hash = await nsblob.store(contents);
-					if (state.known[filepath] !== hash) {
+					const parser = parserMap[path.extname(filepath).substr(1)];
+					if (parser && state.known[filepath] !== hash) {
 						const prettied = format(contents.toString(), {
 							singleQuote: true,
 							useTabs: true,
-							parser: parserMap[path.extname(filepath).substr(1)] || 'babel',
+							parser,
 						});
 						const newhash = await nsblob.store(prettied);
 						if (newhash !== hash) {
