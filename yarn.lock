@@ -27,7 +27,7 @@ base64-arraybuffer@0.1.4:
   resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz#9818c79e059b1355f97e0428a017c838e90ba812"
   integrity sha1-mBjHngWbE1X5fgQooBfIOOkLqBI=
 
-blakets@^0.0.0-3:
+blakets@^0.0.0-3, blakets@^0.0.0-4:
   version "0.0.0-4"
   resolved "https://registry.yarnpkg.com/blakets/-/blakets-0.0.0-4.tgz#3f574a8bd431a8ac75ac8c913a4143e7f80ff3d3"
   integrity sha512-3PFE71fmj0uxwqgMsq7+T5/hDINCddx3+x6qTrbb6FQUPwjB3+2yup1dKUJQYjC7Y4R3JDiy03TatMIOXiknRw==
@@ -120,13 +120,14 @@ nodesite.eu@^1.2.0-10:
     socket.io-client "^3.1.0"
     ts-hound "^1.0.7"
 
-nsblob@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/nsblob/-/nsblob-0.2.6.tgz#6ed32324f8e7f2f0fc0c6d876e44bd91a037cbff"
-  integrity sha512-gQJml7XYoEO39P5lJnIa6h19YDWdEIvotQs8wRUvgqNgHwGcvbMkY8Ujo8V57h/xajlt2P8Lqokyt7bDtTmUKw==
+nsblob@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/nsblob/-/nsblob-0.2.7.tgz#d9444c7ea6a90f725dbdf8cf0b1e07b459ad25e5"
+  integrity sha512-euQwji3EYsZkz+Rryk59JHEAHPoTcFvMs5jHEq8rvvft/WfDPBNSRYksCuVRGZcYy41nwnwm2Bfpzz6npD8C8g==
   dependencies:
-    blakets "^0.0.0-3"
+    blakets "^0.0.0-4"
     nodesite.eu "^1.2.0-10"
+    serial-async-io "^0.1.0-3"
 
 parseqs@0.0.6:
   version "0.0.6"
@@ -143,10 +144,10 @@ prettier@^2.3.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
   integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
-serial-async-io@^0.1.0-2:
-  version "0.1.0-2"
-  resolved "https://registry.yarnpkg.com/serial-async-io/-/serial-async-io-0.1.0-2.tgz#65e34bbe66073aa6f37b157f4d36117d3d43e8b7"
-  integrity sha512-3vU/vs/DS3v/raZ31lcyW/4q3JXp2bvh7yRuyTIDJTah8BSPjq/XUFmEr0M9qRLfwQz6If/Cj7+1KbpGqQoLeQ==
+serial-async-io@^0.1.0, serial-async-io@^0.1.0-3:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/serial-async-io/-/serial-async-io-0.1.0.tgz#3a44a459c6e7e9308463a2dac8a6e1e6582762bf"
+  integrity sha512-nbl2p7HbYHHIMUgf9fuDydG030wjk4/wwAm8537ZzL8kSyTe2U2z/Ekbeh7zi83YnY6Pu2GqDY5RJEC251ScLQ==
 
 socket.io-client@^3.1.0:
   version "3.1.3"
