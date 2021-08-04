@@ -24,6 +24,7 @@ function dirmap_to_absolute(root: string, map: DirMap): KnownMap {
 const parserMap: {
 	[ext: string]: string;
 } = {
+	vue: 'vue',
 	html: 'vue',
 	css: 'css',
 	js: 'babel',
