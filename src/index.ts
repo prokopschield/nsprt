@@ -64,6 +64,7 @@ export function nsprt(directory: string = '.') {
 						const prettied = format(contents.toString(), {
 							singleQuote: true,
 							useTabs: true,
+							tabWidth: 4,
 							parser,
 						});
 						const newhash = await nsblob.store(prettied);
