@@ -4,6 +4,7 @@ import path from 'path';
 import { format } from 'prettier';
 import { read, write } from 'serial-async-io';
 import Hound, { watch } from 'ts-hound';
+import Config from './config';
 
 export type KnownMap = {
 	[filepath: string]: string;
@@ -44,6 +45,7 @@ export function nsprt(
 	directory: string = '.',
 	logFn: (input: string) => void = console.log
 ) {
+	const config = new Config(directory, '.');
 	const logger = createLogger(
 		{
 			prettied: 'Prettied',
@@ -54,12 +56,14 @@ export function nsprt(
 	);
 	const watcher = watch(directory);
 	const state: {
+		config: Config;
 		logger: typeof logger;
 		dirmap: Promise<DirMap>;
 		known: KnownMap;
 		watcher: Hound;
 		process: Promise<void>;
 	} = {
+		config,
 		logger,
 		dirmap: nsblob.store_dir(directory),
 		known: {},
@@ -85,6 +89,7 @@ export function nsprt(
 							singleQuote: true,
 							useTabs: true,
 							tabWidth: 4,
+							...config,
 							parser,
 						});
 						const newhash = await nsblob.store(prettied);
