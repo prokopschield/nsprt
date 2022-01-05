@@ -2,8 +2,8 @@
 
 import { nsprt } from '.';
 
-nsprt();
+const state = nsprt();
 
 process.on('uncaughtException', (e: Error) => {
-	console.error(`An error has occured: ${e.message}`);
+	state.logger.error(e.message);
 });

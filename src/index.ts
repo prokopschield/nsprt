@@ -1,3 +1,4 @@
+import { createLogger } from '@lvksh/logger';
 import nsblob, { DirMap } from 'nsblob';
 import path from 'path';
 import { format } from 'prettier';
@@ -33,14 +34,33 @@ const parserMap: {
 	md: 'markdown',
 };
 
-export function nsprt(directory: string = '.') {
+/**
+ * Begin prettying directory
+ * @param directory directory to prettify
+ * @param logFn passed to \@lvksh\/logger
+ * @returns the prettier's internal state
+ */
+export function nsprt(
+	directory: string = '.',
+	logFn: (input: string) => void = console.log
+) {
+	const logger = createLogger(
+		{
+			prettied: 'Prettied',
+			error: 'ERROR',
+		},
+		undefined,
+		logFn
+	);
 	const watcher = watch(directory);
 	const state: {
+		logger: typeof logger;
 		dirmap: Promise<DirMap>;
 		known: KnownMap;
 		watcher: Hound;
 		process: Promise<void>;
 	} = {
+		logger,
 		dirmap: nsblob.store_dir(directory),
 		known: {},
 		watcher,
@@ -59,7 +79,7 @@ export function nsprt(directory: string = '.') {
 				try {
 					const contents = await read(filepath);
 					const hash = await nsblob.store(contents);
-					const parser = parserMap[path.extname(filepath).substr(1)];
+					const parser = parserMap[path.extname(filepath).slice(1)];
 					if (parser && state.known[filepath] !== hash) {
 						const prettied = format(contents.toString(), {
 							singleQuote: true,
@@ -71,11 +91,11 @@ export function nsprt(directory: string = '.') {
 						if (newhash !== hash) {
 							await write(filepath, prettied);
 							state.known[filepath] = prettied;
-							console.log(
-								`Prettied ${path.relative(
+							logger.prettied(
+								`${path.relative(
 									directory,
 									filepath
-								)} ${newhash.substr(16, 8)}  ❤️`
+								)} ${newhash.slice(16, 24)}  ❤️`
 							);
 						}
 					}
