@@ -98,7 +98,7 @@ export function nsprt(
 							await delay(300);
 
 							if ((await nsblob.store_file(filepath)) !== hash) {
-								// file has been modified
+								// file was modified since we read it
 								return;
 							}
 
