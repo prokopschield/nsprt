@@ -53,7 +53,7 @@ export function nsprt(
 			error: 'ERROR',
 		},
 		undefined,
-		logFn
+		(line) => logFn(String(line))
 	);
 	const watcher = watch(directory);
 	const state: {
