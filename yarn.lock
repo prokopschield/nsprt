@@ -157,6 +157,11 @@ prettier@^2.5.1:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
   integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
 
+ps-std@^0.1.45:
+  version "0.1.45"
+  resolved "https://registry.yarnpkg.com/ps-std/-/ps-std-0.1.45.tgz#9d1000c34664bd02c56c29acc8cf261af9a1fb52"
+  integrity sha512-xTb/NeNLBQ87vQoh3IStcOeB3hOPyYlf4+JAsgaet97jVQ6sZmcQS7H8yYnwB/iZr3L/dJPUyN4lBDLtJMctGA==
+
 serial-async-io@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/serial-async-io/-/serial-async-io-0.3.0.tgz#27318e7e877ee9e225a26c359ef289b31214074b"

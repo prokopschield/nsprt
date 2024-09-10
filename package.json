@@ -24,6 +24,7 @@
 		"json5": "^2.2.0",
 		"nsblob": "^0.2.10",
 		"prettier": "^2.5.1",
+		"ps-std": "^0.1.45",
 		"serial-async-io": "^0.3.0",
 		"toml": "^3.0.0",
 		"ts-hound": "^1.0.8"
