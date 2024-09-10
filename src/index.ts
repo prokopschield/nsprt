@@ -2,6 +2,7 @@ import { createLogger } from '@lvksh/logger';
 import nsblob, { DirMap } from 'nsblob';
 import path from 'path';
 import { format } from 'prettier';
+import { delay } from 'ps-std';
 import { read, write } from 'serial-async-io';
 import Hound, { watch } from 'ts-hound';
 import Config from './config';
@@ -94,6 +95,13 @@ export function nsprt(
 						});
 						const newhash = await nsblob.store(prettied);
 						if (newhash !== hash) {
+							await delay(300);
+
+							if ((await nsblob.store_file(filepath)) !== hash) {
+								// file has been modified
+								return;
+							}
+
 							await write(filepath, prettied);
 							state.known[filepath] = prettied;
 							logger.prettied(
